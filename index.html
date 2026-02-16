@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Photon Tide</title>
+  <meta name="description" content="Photon Tide — Exhibitions, Works, Drops, About, Contact." />
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <!-- grain + bloom -->
+  <div class="fx">
+    <div class="fx__bloom"></div>
+    <div class="fx__grain" aria-hidden="true"></div>
+    <div class="fx__vignette" aria-hidden="true"></div>
+  </div>
+
+  <header class="header">
+    <a class="brand" href="#top" aria-label="Photon Tide home">PHOTON&nbsp;TIDE</a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#exhibitions">Exhibitions</a>
+      <a href="#works">Works</a>
+      <a href="#drops">Drops</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="hero">
+      <h1>Vast work. Quiet signals.</h1>
+      <p>
+        A portfolio shell built to breathe — minimal, liminal, and designed for scale.
+      </p>
+      <div class="hero__actions">
+        <a class="btn" href="#works">Enter Works</a>
+        <a class="btn btn--ghost" href="#drops">View Drops</a>
+      </div>
+      <div class="rule"></div>
+    </section>
+
+    <!-- Exhibitions -->
+    <section id="exhibitions" class="section">
+      <div class="section__head">
+        <h2>Exhibitions</h2>
+        <p>Showings, screenings, pop-ups, online exhibits. Keep it sparse.</p>
+      </div>
+
+      <div class="cards" id="exhibitionsList">
+        <!-- Edit these in index.html or switch to JSON later -->
+        <article class="card">
+          <div class="card__top">
+            <div class="card__title">Title of Exhibition</div>
+            <div class="card__meta">Month YYYY</div>
+          </div>
+          <div class="card__sub">City / Venue (or Online)</div>
+          <p class="card__body">One-line note about the showing.</p>
+          <a class="card__link" href="#" target="_blank" rel="noreferrer">More →</a>
+        </article>
+
+        <article class="card">
+          <div class="card__top">
+            <div class="card__title">Another Exhibition</div>
+            <div class="card__meta">Month YYYY</div>
+          </div>
+          <div class="card__sub">Location</div>
+          <p class="card__body">Optional note.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Works -->
+    <section id="works" class="section">
+      <div class="section__head">
+        <h2>Works</h2>
+        <p>1:1 thumbnails. Click a piece for details.</p>
+      </div>
+
+      <!-- Grid populated by script.js from WORKS array -->
+      <div class="grid" id="worksGrid" aria-live="polite"></div>
+    </section>
+
+    <!-- Drops -->
+    <section id="drops" class="section">
+      <div class="section__head">
+        <h2>Drops</h2>
+        <p>Collections, auctions, releases. Link to canonical pages.</p>
+      </div>
+
+      <div class="cards" id="dropsList">
+        <article class="card">
+          <div class="card__top">
+            <div class="card__title">Drop Title</div>
+            <div class="card__meta">Month YYYY</div>
+          </div>
+          <div class="card__sub">Auction / Open edition / Collab</div>
+          <p class="card__body">Short note about the drop.</p>
+          <div class="pillrow">
+            <a class="pill" href="#" target="_blank" rel="noreferrer">Mint →</a>
+            <a class="pill" href="#" target="_blank" rel="noreferrer">Market →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="section__head">
+        <h2>About</h2>
+        <p>Minimal statement. Expand later if you want.</p>
+      </div>
+
+      <div class="panel">
+        <p>
+          Photon Tide explores liminal scale, silhouette ritual, and quiet psychological pressure —
+          a language of vast landscapes, soft distortion, and symbols that feel remembered rather than seen.
+        </p>
+        <p class="muted">
+          (Replace this with your real artist statement when ready.)
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="section__head">
+        <h2>Contact</h2>
+        <p>Direct links. No friction.</p>
+      </div>
+
+      <div class="panel">
+        <div class="contact">
+          <a href="mailto:you@domain.com" class="contact__link">you@domain.com</a>
+          <a href="#" class="contact__link" target="_blank" rel="noreferrer">X / Twitter →</a>
+          <a href="#" class="contact__link" target="_blank" rel="noreferrer">Instagram →</a>
+          <a href="#" class="contact__link" target="_blank" rel="noreferrer">Foundation / Manifold →</a>
+        </div>
+        <div class="tiny muted">© <span id="year"></span> Photon Tide</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Work modal -->
+  <dialog class="modal" id="workModal" aria-label="Work details">
+    <button class="modal__close" id="modalClose" aria-label="Close">×</button>
+    <div class="modal__content">
+      <div class="modal__media">
+        <img id="modalImg" alt="" />
+      </div>
+      <div class="modal__info">
+        <div class="modal__title" id="modalTitle"></div>
+        <div class="modal__meta" id="modalMeta"></div>
+        <p class="modal__text" id="modalText"></p>
+        <div class="modal__tags" id="modalTags"></div>
+        <div class="modal__links" id="modalLinks"></div>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="./script.js"></script>
+</body>
+</html>
